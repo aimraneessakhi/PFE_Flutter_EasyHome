@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/app/common_widgets/custom_raised_button.dart';
+import 'package:EasyHome/app/common_widgets/custom_raised_button.dart';
 
 class SocialSingInButton extends CustomRaisedButton {
   SocialSingInButton(
@@ -11,7 +11,7 @@ class SocialSingInButton extends CustomRaisedButton {
       : super(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
+              children: [
                 Image.asset(assetName),
                 Text(
                   text,
