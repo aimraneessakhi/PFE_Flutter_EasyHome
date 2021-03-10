@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_login_facebook/flutter_login_facebook.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class TestPage extends StatelessWidget {
   const TestPage({Key key, @required this.onSignOut}) : super(key: key);
@@ -7,6 +9,10 @@ class TestPage extends StatelessWidget {
 
   Future<void> _signOut() async {
     try {
+      final googleSignIn = GoogleSignIn();
+      await googleSignIn.signOut();
+      final facebookSignIn = FacebookLogin();
+      await facebookSignIn.logOut();
       await FirebaseAuth.instance.signOut();
       onSignOut();
     } catch (e) {
